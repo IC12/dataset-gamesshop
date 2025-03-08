@@ -1,3 +1,22 @@
+import pandas as pd
+
+# Caminhos dos arquivos
+files = {
+    "AliExpress": "/mnt/data/Meganium_Sales_Data_-_AliExpress.csv",
+    "Etsy": "/mnt/data/Meganium_Sales_Data_-_Etsy.csv",
+    "Shopee": "/mnt/data/Meganium_Sales_Data_-_Shopee.csv",
+}
+
+# Ler os arquivos CSV
+dataframes = {name: pd.read_csv(path) for name, path in files.items()}
+
+# Visualizar as primeiras linhas de cada dataset para entender a estrutura
+{key: df.head() for key, df in dataframes.items()}
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+
 import matplotlib.pyplot as plt
 import seaborn as sns
 from datetime import datetime
